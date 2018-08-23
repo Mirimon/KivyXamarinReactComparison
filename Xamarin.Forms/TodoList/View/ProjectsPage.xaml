@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:TodoList.View" x:Class="TodoList.View.ProjectsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="AddNew_Clicked" Icon="plus.png"/>
+    </ContentPage.ToolbarItems>
+
+    <ListView ItemsSource="{Binding Projects}" ItemTapped="List_ItemTapped">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Name}" TextColor="Black">
+                    <TextCell.ContextActions>
+                        <MenuItem Clicked="DeleteItem_Clicked" IsDestructive="true" CommandParameter="{Binding .}" Text="Delete"/>
+                    </TextCell.ContextActions>
+                </TextCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

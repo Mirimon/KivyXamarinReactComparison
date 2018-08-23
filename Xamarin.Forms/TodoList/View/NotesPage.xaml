@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TodoList.View.NotesPage"
+             xmlns:local="clr-namespace:TodoList.View"
+             xmlns:utils="clr-namespace:TodoList.Utils"
+             Title="{Binding Project.Name}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <utils:PathToImageConverter x:Key="PathToImageConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="AddNew_Clicked" Icon="plus.png"/>
+    </ContentPage.ToolbarItems>
+
+    <ListView ItemsSource="{Binding Project.Notes}" x:Name="list" ItemTapped="List_ItemTapped" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <local:MyCellGrid Margin="5">
+                        <local:MyCellGrid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="*"/>
+                        </local:MyCellGrid.RowDefinitions>
+                        <local:MyCellGrid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </local:MyCellGrid.ColumnDefinitions>
+                        <Image Grid.Row="0" Grid.Column="0" Source="{Binding UserIconPath, Converter={StaticResource PathToImageConverter}}" />
+                        <StackLayout Grid.Row="0" Grid.Column="1">
+                            <Label Text="{Binding UserName}" FontAttributes="Bold"/>
+                            <Label Text="{Binding EditTime}"/>
+                        </StackLayout>
+                        <Button Grid.Row="0" Grid.Column="2" BackgroundColor="Transparent" Image="menu.png" Margin="5" HorizontalOptions="FillAndExpand" Clicked="RowMenu_Clicked"/>
+                        <local:MyLabel Grid.Row="1" Grid.Column="1" Margin="0,10,0,0" Grid.ColumnSpan="2" Text="{Binding Text}"/>
+                    </local:MyCellGrid>
+
+                    <ViewCell.ContextActions>
+                        <MenuItem Clicked="DeleteItem_Clicked" IsDestructive="true" CommandParameter="{Binding .}" Text="Delete"/>
+                    </ViewCell.ContextActions>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

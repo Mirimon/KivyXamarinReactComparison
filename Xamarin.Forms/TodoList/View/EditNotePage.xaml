@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TodoList.View.EditNotePage"
+             Title="{Binding ProjectName}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="Save_Clicked" Text="Save"/>
+    </ContentPage.ToolbarItems>
+    <Editor Text="{Binding Text, Mode=TwoWay}"/>
+</ContentPage>

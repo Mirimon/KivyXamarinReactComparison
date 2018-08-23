@@ -1,0 +1,31 @@
+#:import Toolbar libs.applibs.kivymd.toolbar.Toolbar
+
+<ListNotesActivity>:
+    name: 'list notes activity'
+    on_leave: root.clearList()
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Toolbar:
+            id: toolBar
+            elevation: 10
+            md_bg_color: app.theme_cls.primary_color
+            right_action_items: [['plus', lambda x: root.addNewNote(app)]]
+            left_action_items: [['chevron-left', lambda x: app.activityManager.backActivity('list project activity')]]
+
+        ScrollView:
+            size_hint: 1, 1
+            do_scroll_x: False
+
+            GridLayout:
+                id: layoutContainer
+                cols: 1
+                spacing: dp(10)
+                padding: dp(10)
+                size_hint_y: None
+                height: self.minimum_height
+
+    Image
+        opacity: .5
+        source: 'data/images/icon.png' if not len(layoutContainer.children) else 'data/images/alpha.png'

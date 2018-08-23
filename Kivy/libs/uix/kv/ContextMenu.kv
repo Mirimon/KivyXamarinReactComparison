@@ -1,0 +1,19 @@
+#:import MDSeparator libs.applibs.kivymd.card.MDSeparator
+#:import MenuItem libs.applibs.animdropdown.MenuItem
+
+
+<ContextMenu>:
+    width_menu: dp(140)
+    text_color: '#000000'
+
+    MenuItem:
+        text: 'Редактировать'
+        menu: root
+        on_press: root.tapOnItem(self.text)
+
+    MDSeparator:
+
+    MenuItem:
+        text: 'Удалить'
+        menu: root
+        on_press: root.tapOnItem(self.text)

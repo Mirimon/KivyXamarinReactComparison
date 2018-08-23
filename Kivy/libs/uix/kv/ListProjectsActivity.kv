@@ -1,0 +1,32 @@
+#:import Toolbar libs.applibs.kivymd.toolbar.Toolbar
+
+<ListProjectsActivity>:
+    name: 'list project activity'
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Toolbar:
+            id: actionBar
+            elevation: 10
+            md_bg_color: app.theme_cls.primary_color
+            title: app.title
+            right_action_items: [['plus', lambda x: root.showDialogCreateProject()]]
+
+        ScrollView:
+            size_hint: 1, 1
+            do_scroll_x: False
+
+            GridLayout:
+                id: layoutContainer
+                cols: 1
+                spacing: dp(10)
+                padding: dp(10)
+                size_hint_y: None
+                height: self.minimum_height
+
+    Image
+        opacity: .5
+        source:
+            'data/images/icon.png' \
+            if not len(layoutContainer.children) else 'data/images/alpha.png'

@@ -1,0 +1,17 @@
+#:import LeftIconAsync libs.uix.lists.LeftIconAsync
+#:import OneLineListItem libs.applibs.kivymd.list.OneLineListItem
+
+
+<ProjectItem>:
+    size_hint: 1, None
+    height: dp(50)
+    swipe_rectangle: self.x, self.y , self.width, self.height
+    swipe_timeout: 1000000
+    swipe_distance: 1
+    event_after_swipe: app.listProjectsActivity.deleteProject
+
+    OneLineListItem:
+        text: root.projectName
+        on_press:
+            app.listNotesActivity.setNotesProject(root.projectName)
+            app.activityManager.current = 'list notes activity'

@@ -1,0 +1,21 @@
+#:import ListProjectsActivity libs.uix.baseclass.ListProjectsActivity.ListProjectsActivity
+#:import ListNotesActivity libs.uix.baseclass.ListNotesActivity.ListNotesActivity
+#:import AddNewNoteActivity libs.uix.baseclass.AddNewNoteActivity.AddNewNoteActivity
+#:import ActivityManager libs.uix.baseclass.ActivityManager.ActivityManager
+
+
+<RootScreen@BoxLayout>:
+    orientation: 'vertical'
+    spacing: dp(2)
+
+    ActivityManager:
+        id: activityManager
+
+        ListProjectsActivity:
+            id: listProjectsActivity
+
+        ListNotesActivity:
+            id: listNotesActivity
+
+        AddNewNoteActivity:
+            id: addNewNoteActivity

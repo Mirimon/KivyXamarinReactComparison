@@ -1,0 +1,56 @@
+#:import MDSeparator libs.applibs.kivymd.card.MDSeparator
+#:import MDIconButton libs.applibs.kivymd.button.MDIconButton
+#:import LeftIconAsync libs.uix.lists.LeftIcon
+
+
+# Activity пункта TODO.
+
+
+<NoteActivity>:
+    height: dp(200)
+    spacing: dp(5)
+    padding: dp(5)
+    orientation: 'vertical'
+    size_hint_y: None
+    swipe_rectangle: self.x, self.y , self.width, self.height
+    swipe_timeout: 1000000
+    swipe_distance: 1
+    event_after_swipe: app.listNotesActivity.deletePost
+
+    # Аватар, имя автора и дата поста.
+    BoxLayout:
+        id: titleBox
+        size_hint_y: None
+        height: dp(50)
+        spacing: dp(10)
+
+        LeftIcon:
+            source: root.pathToAvatar
+            size_hint_x: None
+            width: self.height
+            allow_stretch: True
+
+        Label:
+            markup: True
+            text: root.nameDate
+            text_size: self.width, None
+            bold: True
+            color: 0, 0, 0, 1
+            font_size: '12sp'
+
+    Widget:
+        size_hint_y: None
+        height: dp(3)
+
+    # Текст поста.
+    Label:
+        id: textNote
+        text: root.textNote
+        markup: True
+        font_size: '14sp'
+        text_size: self.width - 5, dp(120)
+        valign: 'top'
+        color: 0, 0, 0, 1
+
+    MDSeparator:
+        height: dp(1)

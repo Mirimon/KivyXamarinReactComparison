@@ -1,0 +1,7 @@
+Mercury/
+Mercury.modules
+*.log
+.idea
+.kivy
+.buildozer
+

@@ -1,0 +1,37 @@
+#:import MDFloatingActionButton libs.applibs.kivymd.button.MDFloatingActionButton
+#:import Toolbar libs.applibs.kivymd.toolbar.Toolbar
+
+<AddNewNoteActivity>
+    name: 'add new note activity'
+    on_enter: root.animationButton()
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Toolbar:
+            id: toolBar
+            elevation: 10
+            md_bg_color: app.theme_cls.primary_color
+            right_action_items: []
+            left_action_items:
+                [['chevron-left', lambda x: app.activityManager.backActivity(\
+                'list notes activity', floatingButton)]]
+
+        TextInput:
+            id: textInput
+            size_hint: 1, 1
+            background_normal: 'data/images/alpha.png'
+            text: '#TODO: '
+            background_active: 'data/images/alpha.png'
+
+    MDFloatingActionButton:
+        id: floatingButton
+        icon: 'check'
+        md_bg_color: app.theme_cls.primary_color
+        x: app.Window.width - (self.width + dp(15))
+        y: dp(15)
+        size_hint: None, None
+        size: 0, 0
+        on_release:
+            root.addNewNotes(textInput.text)
+            app.activityManager.backActivity('list notes activity', self)

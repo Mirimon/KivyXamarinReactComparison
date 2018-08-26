@@ -15,7 +15,7 @@ class TodoList(App, DataBase):
     title = 'Todo List'
     icon = 'icon.png'
     theme_cls = ThemeManager()
-    theme_cls.primary_palette = 'BlueGrey'
+    theme_cls.primary_palette = 'LightGreen'
 
     def __init__(self, **kvargs):
         super(TodoList, self).__init__(**kvargs)

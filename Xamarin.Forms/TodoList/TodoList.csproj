@@ -14,12 +14,13 @@
     <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Images\User1.png" />
     <None Remove="Images\User2.png" />
+    <None Remove="Images\user1.png" />
+    <None Remove="Images\User1.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\User1.png" />
     <EmbeddedResource Include="Images\User2.png" />
+    <EmbeddedResource Include="Images\User1.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Utils\InputBox.cs" />

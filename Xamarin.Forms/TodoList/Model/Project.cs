@@ -24,12 +24,12 @@ namespace TodoList.Model {
 
         public static ObservableCollection<Project> GetTestProjects() {
             ObservableCollection<Project> result = new ObservableCollection<Project>();
-            Project project = new Project() { Name = "Сравнение фреймворков" };
-            project.Notes.Add(new Note() { UserName = "Александр Блинов", EditTime = DateTime.Now, Text = "Сравнить Xamarin.Forms, Kivy и React Native на примере TODO List приложения", UserIconPath = "TodoList.Images.User1.png" });
-            project.Notes.Add(new Note() { UserName = "Юрий Иванов", EditTime = DateTime.Now, Text = "Написать по статье для каждого фреймворка", UserIconPath = "TodoList.Images.User2.png" });
-            project.Notes.Add(new Note() { UserName = "Александр Блинов", EditTime = DateTime.Now, Text = "Возможно, сделать отдельную статью для выводов", UserIconPath = "TodoList.Images.User1.png" });
+            Project project = new Project() { Name = "Тестовый проект для Хабра" };
+            project.Notes.Add(new Note() { UserName = "Первый пользователь", EditTime = DateTime.Now, Text = "Длинный текст, который должен занимать несколько строк. Съешь ещё этих мягких французских булок, да выпей же чаю.", UserIconPath = "TodoList.Images.User1.png" });
+            project.Notes.Add(new Note() { UserName = "Второй пользователь", EditTime = DateTime.Now, Text = "Текст на одну строку", UserIconPath = "TodoList.Images.User2.png" });
+            project.Notes.Add(new Note() { UserName = "Первый пользователь", EditTime = DateTime.Now, Text = "Текст на две строки, поэтому этот текст должен быть вот такой длины", UserIconPath = "TodoList.Images.User1.png" });
             result.Add(project);
-            result.Add(new Project() { Name = "Тестовый проект" });
+            result.Add(new Project() { Name = "Пустой проект" });
 
             return result;
         }

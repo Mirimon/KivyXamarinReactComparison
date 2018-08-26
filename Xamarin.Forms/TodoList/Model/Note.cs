@@ -53,7 +53,7 @@ namespace TodoList.Model {
         }
 
         public static Note CreateCurrentUserNote() {
-            return new Note() { UserName = "Alex", UserIconPath = "TodoList.Images.User1.png", EditTime = DateTime.Now, Text = "" };
+            return new Note() { UserName = "Первый пользователь", UserIconPath = "TodoList.Images.User1.png", EditTime = DateTime.Now, Text = "" };
         }
     }
 }

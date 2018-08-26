@@ -7,7 +7,6 @@
 
 
 <NoteActivity>:
-    height: dp(200)
     spacing: dp(5)
     padding: dp(5)
     orientation: 'vertical'
@@ -53,8 +52,5 @@
         size_hint_y: None
         valign: 'top'
         height: self.texture_size[1] if self.texture_size[1] < 150 else 150
-        text_size: self.width - dp(5), None if self.texture_size[1] < 150 else 150
+        text_size: self.width - dp(5), None if self.texture_size[1] <= 150 else 150
         color: 0, 0, 0, 1
-
-    MDSeparator:
-        height: dp(1)

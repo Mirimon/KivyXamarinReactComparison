@@ -1,6 +1,6 @@
 # Kivy Todo List
 
-Демонстрационное приложение, написанное с помощью фреймворка Kivy для на [Хабре](https://habr.com).
+Демонстрационное приложение, написанное с помощью фреймворка Kivy для статьи на [Хабре](https://habr.com).
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/HeaTTheatR/KivyTodoList/master/data/images/icon.png">

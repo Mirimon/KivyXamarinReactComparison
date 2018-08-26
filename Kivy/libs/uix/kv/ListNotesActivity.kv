@@ -18,6 +18,12 @@
             size_hint: 1, 1
             do_scroll_x: False
 
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: 'data/images/list-notes-bg.png'
+
             GridLayout:
                 id: layoutContainer
                 cols: 1

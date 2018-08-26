@@ -1,13 +1,14 @@
 from kivy.app import App
 from kivy.properties import StringProperty
-from kivy.uix.boxlayout import BoxLayout
 
 from libs.applibs.animdropdown import MenuButton
 from libs.applibs.swipetodelete import SwipeBehavior
+
+from libs.applibs.kivymd.card import MDCard
 from . ContextMenu import ContextMenu
 
 
-class NoteActivity(SwipeBehavior, BoxLayout):
+class NoteActivity(SwipeBehavior, MDCard):
     nameDate = StringProperty()
     textNote = StringProperty()
     pathToAvatar = StringProperty()

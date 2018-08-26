@@ -32,7 +32,7 @@ class AddNewNoteActivity(Activity):
                 textNote=textNote, nameDate='%s\n%s' % (
                 self.objApp.nameAuthor, self.objApp.getDate()),
                 pathToAvatar='data/images/avatar.png'))
-        self.objApp.addNoteInBase(self.ids.toolBar.title, textNote, 'data/images/avatar.png')
+        self.objApp.addNoteInBase(self.ids.toolBar.title, textNote, 'data/images/user-2.png')
 
     def editNote(self, interval):
         self.edit = True

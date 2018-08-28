@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from kivy.app import App
 from kivy.animation import Animation
 from kivy.uix.screenmanager import Screen as Activity
@@ -31,7 +29,7 @@ class AddNewNoteActivity(Activity):
             NoteActivity(
                 textNote=textNote, nameDate='%s\n%s' % (
                 self.objApp.nameAuthor, self.objApp.getDate()),
-                pathToAvatar='data/images/avatar.png'))
+                pathToAvatar='data/images/user-2.png'))
         self.objApp.addNoteInBase(self.ids.toolBar.title, textNote, 'data/images/user-2.png')
 
     def editNote(self, interval):

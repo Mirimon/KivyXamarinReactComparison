@@ -3,7 +3,7 @@
 Демонстрационное приложение, написанное с помощью фреймворка Kivy для статьи на [Хабре](https://habr.com).
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/KivyXamarinReactComparison/Kivy/data/images/previous.png">
+  <img src="https://raw.githubusercontent.com/Mirimon/KivyXamarinReactComparison/master/Kivy/data/images/previous.png">
 </p>
 
 ЛИЦЕНЗИЯ

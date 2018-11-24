@@ -28,5 +28,5 @@ class ListProjectsActivity(Activity):
     def showDialogCreateProject(self, *args):
         InputDialog(
             title='Новый проект', hintText='Имя проекта',
-            textButtonCancel='Отмена', textTuttonOk='Да',
+            textButtonCancel='Отмена', textButtonOk='Да',
             eventsCallback=self.createNewProject).show()

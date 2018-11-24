@@ -48,6 +48,7 @@ class InputDialog(ModalView):
     title = StringProperty('Title')
     hintText = StringProperty('Write something')
     textButtonOk = StringProperty('OK')
+    textButtonCancel = StringProperty('NO')
     eventsCallback = ObjectProperty()
 
     def __init__(self, **kwargs):
